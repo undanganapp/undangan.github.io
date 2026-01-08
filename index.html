@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Undangan Tasyakuran & Aqiqah - Alby Luthfi Oktarian</title>
 
-    <meta property="og:url" content=" ">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Undangan Tasyakuran & Aqiqah - Alby Luthfi Oktarian">
     <meta property="og:description" content="Undangan Tasyakuran & Aqiqah Putra Kedua dari Bapak Darlianto & Ibu Nia Arna Dewi">
@@ -18,50 +17,18 @@
     <link href="https://indoinvite.com/css/aos.css" rel="stylesheet">
 
     <style>
-
-.music-control {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
-    width: 50px;
-    height: 50px;
-    background: #a37056; /* Sesuaikan warna main-color */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.rotating {
-    animation: rotation 3s infinite linear;
-}
-
-@keyframes rotation {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(359deg); }
-}
-
-
-        
         :root { --main-color: #a37056; --bg-light: #fdfaf7; }
         body { font-family: 'Poppins', sans-serif; color: #333; background: #fff; overflow-x: hidden; }
-        
         h1, h2, .font-special { font-family: 'Waterfall', cursive; color: var(--main-color); }
         
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('foto/bgbg.png');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('foto/bgbg.png');
             background-size: cover; background-position: center;
             height: 100vh; display: flex; align-items: center; justify-content: center;
             color: white; text-align: center;
         }
 
         .section-padding { padding: 80px 20px; }
-        
         .card-custom { 
             border: none; border-radius: 20px; 
             box-shadow: 0 10px 30px rgba(163, 112, 86, 0.1); 
@@ -72,8 +39,18 @@
         .gallery-img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; margin-bottom: 20px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .gallery-img:hover { transform: scale(1.03); }
 
-        .btn-custom { background: var(--main-color); color: white; border-radius: 50px; padding: 12px 40px; border: none; font-weight: 600; box-shadow: 0 4px 15px rgba(163, 112, 86, 0.4); text-decoration: none; display: inline-block; }
-        .btn-custom:hover { background: #8a5e46; color: white; transform: translateY(-2px); }
+        .btn-custom { background: var(--main-color); color: white; border-radius: 50px; padding: 12px 40px; border: none; font-weight: 600; cursor: pointer; display: inline-block; transition: 0.3s; }
+        .btn-custom:hover { background: #8a5e46; color: white; transform: translateY(-2px); text-decoration: none; }
+
+        .music-control {
+            position: fixed; bottom: 20px; right: 20px; z-index: 999;
+            width: 50px; height: 50px; background: var(--main-color);
+            border-radius: 50%; display: none; align-items: center; justify-content: center;
+            color: white; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .rotating { animation: rotation 3s infinite linear; }
+        @keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(359deg); } }
 
         .map-responsive {
             overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0;
@@ -85,24 +62,21 @@
             position: fixed; z-index: 9999; width: 100%; height: 100%;
             background: #fff; display: flex; justify-content: center; align-items: center;
         }
-
         .guest-name { font-size: 1.5rem; font-weight: 600; margin-top: 10px; color: #fff; }
     </style>
 </head>
 <body>
 
-    <audio id="myAudio" loop>
-    <source src="https://media.indoinvite.com/2db3bf1e16cd47a08843bb881e39cce7:indoinvite-staging/indoinvite-staging/indoinvite-staging/nikah/theme/music/1659167827.mp3" type="audio/mpeg">
-</audio>
-
-<div id="music-btn" class="music-control rotating" onclick="toggleMusic()" style="display:none;">
-    <i id="music-icon" class="fas fa-music"></i>
-</div>
-
-    
-
     <div id="loading-screen">
         <img src="https://indoinvite.com/nikah/loading_new.gif" width="100">
+    </div>
+
+    <audio id="myAudio" loop>
+        <source src="https://media.indoinvite.com/2db3bf1e16cd47a08843bb881e39cce7:indoinvite-staging/indoinvite-staging/indoinvite-staging/nikah/theme/music/1659167827.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="music-btn" class="music-control rotating" onclick="toggleMusic()">
+        <i id="music-icon" class="fas fa-music"></i>
     </div>
 
     <div class="hero">
@@ -112,7 +86,7 @@
             
             <div class="mt-4" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
                 <p class="mb-0">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                <div id="display-nama" class="guest-name"> </div> <br/><br/>
+                <div id="display-nama" class="guest-name">Tamu Undangan</div>
             </div>
 
             <div class="mt-4">
@@ -122,7 +96,6 @@
     </div>
 
     <div id="main-content" style="display:none;">
-        
         <section class="section-padding text-center">
             <div class="container" data-aos="fade-up">
                 <h2 style="font-size: 50px; margin-bottom: 20px;">Assalamu’alaikum Wr. Wb.</h2>
@@ -130,22 +103,19 @@
                     Dengan memohon Rahmat dan Ridho Allah SWT kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri Khitanan putra kami:
                 </p>
                 <h1 class="mt-4" style="font-size: 55px;">Alby Luthfi Oktarian</h1>
-                <p style="font-size: 1.5rem;">
-                    Putra kedua dari <b>bapak Darlianto & ibu Nia Arna Dewi</b>
-                </p>
+                <p style="font-size: 1.5rem;">Putra kedua dari <b>bapak Darlianto & ibu Nia Arna Dewi</b></p>
             </div>
         </section>
 
         <section class="section-padding bg-light text-center">
             <div class="container" data-aos="zoom-in">
                 <h2 style="font-size: 55px; margin-bottom: 30px;">Save The Date</h2>
-                
                 <div class="card-custom mx-auto" style="max-width: 600px;">
                     <i class="far fa-calendar-check fa-3x mb-4" style="color: var(--main-color);"></i>
-                    <h4 style="font-family: 'Poppins'; font-weight: 600; color: #333; font-size: 1.5rem;">Senin, 12 Januari 2026</h4>
-                    <p style="font-size: 1.1rem; color: #666;">Pukul 10:00 WIB - Selesai</p>
-                    <hr style="width: 50%; margin: 20px auto; border-color: #eee;">
-                    <p style="font-size: 1.1rem;"><b>Lokasi Acara:</b><br>Kamp. Pancuran Gading, Dusun Tanjung Agung, Kec. Muko-Muko Bathin VII, Bungo</p>
+                    <h4 style="font-weight: 600;">Senin, 12 Januari 2026</h4>
+                    <p>Pukul 10:00 WIB - Selesai</p>
+                    <hr style="width: 50%; margin: 20px auto;">
+                    <p><b>Lokasi Acara:</b><br>Kamp. Pancuran Gading, Dusun Tanjung Agung, Kec. Muko-Muko Bathin VII, Bungo</p>
                 </div>
             </div>
         </section>
@@ -159,39 +129,39 @@
             </div>
         </section>
 
-                <section class="section-padding bg-light">
+        <section class="section-padding bg-light">
             <div class="container text-center">
                 <h2 style="font-size: 55px; margin-bottom: 30px;">Lokasi Acara</h2>
                 <div class="map-responsive" data-aos="fade-up">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4949.153796918104!2d102.0480278!3d-1.525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMzEnMzAuMCJTIDEwMsKwMDInNTIuOSJF!5e1!3m2!1sid!2sid!4v1767592400460!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15951.644143493485!2d102.1310612!3d-1.52123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e2e09307c992791%3A0x6b777a83d4638a16!2sTanjung%20Agung%2C%20Muko-Muko%20Bathin%20VII%2C%20Bungo%20Regency%2C%20Jambi!5e0!3m2!1sen!2sid!4v1700000000000" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <a href="https://maps.app.goo.gl/bPG5hcAaaDHNJ21C8" target="_blank" class="btn btn-custom mt-4"><i class="fas fa-directions mr-2"></i> Petunjuk Jalan</a> <br/><br/>
+                <a href="https://maps.google.com" target="_blank" class="btn btn-custom mt-4"><i class="fas fa-directions mr-2"></i> Petunjuk Jalan</a>
             </div>
         </section>
 
-
-        <section class="section-padding footer-thanks">
-            <div class="container text-center" data-aos="fade-up">
-                <p style="font-style: italic; color: #666; font-size: 1.1rem;">"Semoga menjadi anak yang sholeh dan berbakti kepada kedua orang tua."</p>
+        <footer class="section-padding text-center">
+            <div class="container" data-aos="fade-up">
+                <p style="font-style: italic; color: #666;">"Semoga menjadi anak yang sholeh dan berbakti kepada kedua orang tua."</p>
                 <div class="mt-5">
-                    <h3 style="font-size: 15px;">Kami yang berbahagia,</h3>
+                    <h3 style="font-size: 1.2rem;">Kami yang berbahagia,</h3>
                     <p class="mt-3" style="font-size: 1.8rem; color: var(--main-color);"><b>Keluarga Bapak Darlianto & Ibu Nia Arna Dewi</b></p>
                     <p>Beserta Segenap Keluarga Besar</p>
                 </div>
             </div>
-        </section>
-
+        </footer>
     </div>
 
     <script src="https://indoinvite.com/nikah/js/jquery.min.js"></script>
     <script src="https://indoinvite.com/js/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
+        
+        var song = document.getElementById("myAudio");
 
         $(window).on('load', function() {
             $('#loading-screen').fadeOut('slow');
             
-            // Logika untuk mengambil nama dari URL (?to=Nama Tamu)
+            // Ambil nama dari URL ?to=Nama+Tamu
             const urlParams = new URLSearchParams(window.location.search);
             const namaTamu = urlParams.get('to');
             if (namaTamu) {
@@ -200,43 +170,30 @@
         });
 
         function bukaUndangan() {
-            $('#main-content').show();
+            // Putar Musik
+            song.play();
+            
+            // Tampilkan tombol musik & konten utama
+            document.getElementById('music-btn').style.display = 'flex';
+            $('#main-content').fadeIn(1000);
+            
+            // Scroll otomatis ke konten
             $('html, body').animate({
                 scrollTop: $("#main-content").offset().top
             }, 1000);
+        }
 
-
-            var song = document.getElementById("myAudio");
-
-function bukaUndangan() {
-    // ... kode buka undangan Anda yang sudah ada ...
-    
-    // Tambahkan ini untuk memutar musik
-    song.play();
-    document.getElementById('music-btn').style.display = 'flex';
-}
-
-function toggleMusic() {
-    if (song.paused) {
-        song.play();
-        document.getElementById('music-icon').className = 'fas fa-music';
-        document.getElementById('music-btn').classList.add('rotating');
-    } else {
-        song.pause();
-        document.getElementById('music-icon').className = 'fas fa-pause';
-        document.getElementById('music-btn').classList.remove('rotating');
-    }
-}
-            
+        function toggleMusic() {
+            if (song.paused) {
+                song.play();
+                document.getElementById('music-icon').className = 'fas fa-music';
+                document.getElementById('music-btn').classList.add('rotating');
+            } else {
+                song.pause();
+                document.getElementById('music-icon').className = 'fas fa-pause';
+                document.getElementById('music-btn').classList.remove('rotating');
+            }
         }
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
