@@ -18,6 +18,35 @@
     <link href="https://indoinvite.com/css/aos.css" rel="stylesheet">
 
     <style>
+
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    background: #a37056; /* Sesuaikan warna main-color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.rotating {
+    animation: rotation 3s infinite linear;
+}
+
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+}
+
+
+        
         :root { --main-color: #a37056; --bg-light: #fdfaf7; }
         body { font-family: 'Poppins', sans-serif; color: #333; background: #fff; overflow-x: hidden; }
         
@@ -61,6 +90,16 @@
     </style>
 </head>
 <body>
+
+    <audio id="myAudio" loop>
+    <source src="https://media.indoinvite.com/2db3bf1e16cd47a08843bb881e39cce7:indoinvite-staging/indoinvite-staging/indoinvite-staging/nikah/theme/music/1659167827.mp3" type="audio/mpeg">
+</audio>
+
+<div id="music-btn" class="music-control rotating" onclick="toggleMusic()" style="display:none;">
+    <i id="music-icon" class="fas fa-music"></i>
+</div>
+
+    
 
     <div id="loading-screen">
         <img src="https://indoinvite.com/nikah/loading_new.gif" width="100">
@@ -165,10 +204,35 @@
             $('html, body').animate({
                 scrollTop: $("#main-content").offset().top
             }, 1000);
+
+
+            var song = document.getElementById("myAudio");
+
+function bukaUndangan() {
+    // ... kode buka undangan Anda yang sudah ada ...
+    
+    // Tambahkan ini untuk memutar musik
+    song.play();
+    document.getElementById('music-btn').style.display = 'flex';
+}
+
+function toggleMusic() {
+    if (song.paused) {
+        song.play();
+        document.getElementById('music-icon').className = 'fas fa-music';
+        document.getElementById('music-btn').classList.add('rotating');
+    } else {
+        song.pause();
+        document.getElementById('music-icon').className = 'fas fa-pause';
+        document.getElementById('music-btn').classList.remove('rotating');
+    }
+}
+            
         }
     </script>
 </body>
 </html>
+
 
 
 
